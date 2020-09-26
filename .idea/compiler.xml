@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Hibernate" />
+        <module name="Hibernate5" />
         <module name="Hibernate4" />
         <module name="Hibernate3" />
         <module name="Hibernate2" />
