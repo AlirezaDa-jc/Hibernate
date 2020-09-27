@@ -77,6 +77,8 @@ public class UserRepositoryImpl extends BaseRepositoryImpl<User, Integer> implem
 
         query.setParameter("title", title);
         List<User> resultList = query.getResultList();
+        em.getTransaction().commit();
+
         if (resultList.size() > 0) {
             return resultList.get(0);
         }

@@ -1,12 +1,12 @@
 package ir.maktab.Menu;
 
-import ir.maktab.FactoryMethod.MenuImpl;
+
 import ir.maktab.MainApp;
 import ir.maktab.Scan;
-import ir.maktab.FactoryMethod.Menu;
+
 import ir.maktab.services.*;
 
-public class AdminMenu extends MenuImpl implements Menu {
+public class AdminMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Menu {
     private Scan sc = null;
 
     public AdminMenu() {

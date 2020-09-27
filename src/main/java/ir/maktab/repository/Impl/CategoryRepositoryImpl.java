@@ -44,11 +44,12 @@ public class CategoryRepositoryImpl extends BaseRepositoryImpl<Category,Integer>
     public Category findByTitle(String title) {
         em.getTransaction().begin();
         TypedQuery<Category> query = em.createQuery(
-                "SELECT u FROM Category u where u.name=:title",
+                "SELECT u FROM Category u where u.title=:title",
                 Category.class);
 
         query.setParameter("title", title);
         List<Category> resultList = query.getResultList();
+        em.getTransaction().commit();
         if (resultList.size() > 0) {
             return resultList.get(0);
         }

@@ -45,11 +45,12 @@ public class AddressRepositoryImpl extends BaseRepositoryImpl<Address, Integer> 
     public Address findByTitle(String title) {
         em.getTransaction().begin();
         TypedQuery<Address> query = em.createQuery(
-                "SELECT u FROM Address u where u.name=:title",
+                "SELECT u FROM Address u where u.address=:title",
                Address.class);
 
         query.setParameter("title", title);
         List<Address> resultList = query.getResultList();
+        em.getTransaction().commit();
         if (resultList.size() > 0) {
             return resultList.get(0);
         }

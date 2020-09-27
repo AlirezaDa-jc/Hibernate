@@ -48,11 +48,12 @@ public class TagRepositoryImpl extends BaseRepositoryImpl<Tag,Integer> implement
     public Tag findByTitle(String title) {
         em.getTransaction().begin();
         TypedQuery<Tag> query = em.createQuery(
-                "SELECT u FROM Tag u where u.name=:title",
+                "SELECT u FROM Tag u where u.title=:title",
                 Tag.class);
 
         query.setParameter("title", title);
         List<Tag> resultList = query.getResultList();
+        em.getTransaction().commit();
         if (resultList.size() > 0) {
             return resultList.get(0);
         }

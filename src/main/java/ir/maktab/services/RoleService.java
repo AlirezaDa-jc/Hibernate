@@ -25,26 +25,12 @@ public class RoleService {
         RoleService.role = role;
     }
 
-    public static boolean checkRole() {
+    public static void checkRole(String roleTitle) {
         try {
-            String roleTitle = sc.getString("User Or Admin: ");
-            roleTitle = roleTitle.toUpperCase();
-            List<Role> roleList = repository.findAll();
-            for (Role value : roleList) {
-                if (value.getRoleTitle().equals(roleTitle)) {
-                    role = value;
-                    System.out.println("Welcome " + role.getRoleTitle());
-                    return true;
-                }
-            }
-            role.setRoleTitle(roleTitle);
-            repository.update(role);
-            repository.findById(role.getId());
+            role = repository.findByTitle(roleTitle);
             System.out.println("Welcome " + role.getRoleTitle());
-            return true;
-        }catch (NullPointerException ex) {
+        } catch (NullPointerException ex) {
             System.out.println("Invalid Role Title!");
-            return false;
         }
 
     }

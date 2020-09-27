@@ -77,6 +77,8 @@ public class ArticleRepositoryImpl extends BaseRepositoryImpl<Article, Integer> 
 
         query.setParameter("title", title);
         List<Article> resultList = query.getResultList();
+        em.getTransaction().commit();
+
         if (resultList.size() > 0) {
             return resultList.get(0);
         }

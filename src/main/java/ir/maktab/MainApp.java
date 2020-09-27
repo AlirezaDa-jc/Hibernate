@@ -1,13 +1,7 @@
 package ir.maktab;
 
-import ir.maktab.FactoryMethod.Menu;
-import ir.maktab.FactoryMethod.MenuFactory;
-import ir.maktab.Menu.AdminMenu;
-import ir.maktab.Menu.UserMenu;
-import ir.maktab.entities.Role;
-import ir.maktab.services.AdminService;
-import ir.maktab.services.RoleService;
-import ir.maktab.services.UserService;
+
+import ir.maktab.Menu.FactoryMethod;
 
 public class MainApp {
 
@@ -22,9 +16,9 @@ public class MainApp {
     }
 
     private static void checkRole() {
-        MenuFactory menuFactory =  new MenuFactory();
+        FactoryMethod.MenuFactory menuFactory =  new FactoryMethod.MenuFactory();
         while (true) {
-            Menu menu = menuFactory.getMenu();
+            FactoryMethod.Menu menu = menuFactory.getMenu();
             menu.menuHandler();
         }
     }

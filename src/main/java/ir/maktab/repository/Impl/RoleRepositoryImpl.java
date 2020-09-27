@@ -43,11 +43,12 @@ public class RoleRepositoryImpl extends BaseRepositoryImpl<Role,Integer> impleme
     public Role findByTitle(String title) {
         em.getTransaction().begin();
         TypedQuery<Role> query = em.createQuery(
-                "SELECT u FROM Role u where u.name=:title",
+                "SELECT u FROM Role u where u.roleTitle=:title",
                 Role.class);
 
         query.setParameter("title", title);
         List<Role> resultList = query.getResultList();
+        em.getTransaction().commit();
         if (resultList.size() > 0) {
             return resultList.get(0);
         }

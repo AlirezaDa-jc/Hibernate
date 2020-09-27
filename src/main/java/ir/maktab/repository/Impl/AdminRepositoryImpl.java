@@ -68,6 +68,7 @@ public class AdminRepositoryImpl extends BaseRepositoryImpl<Admin, Integer> impl
 
         query.setParameter("title", title);
         List<Admin> resultList = query.getResultList();
+        em.getTransaction().commit();
         if (resultList.size() > 0) {
             return resultList.get(0);
         }
