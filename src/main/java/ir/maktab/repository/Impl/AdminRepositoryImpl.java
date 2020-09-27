@@ -79,8 +79,4 @@ public class AdminRepositoryImpl extends BaseRepositoryImpl<Admin, Integer> impl
         super.delete(admin);
     }
 
-    public void close() {
-        super.close();
-    }
-
 }

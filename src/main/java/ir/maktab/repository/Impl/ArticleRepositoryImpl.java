@@ -88,10 +88,6 @@ public class ArticleRepositoryImpl extends BaseRepositoryImpl<Article, Integer> 
         super.delete(article);
     }
 
-    public void close() {
-        super.close();
-    }
-
     @Override
     public void displayAll() {
         List<Article> all = findAll();

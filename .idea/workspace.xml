@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="749b92d3-c99b-4f74-9413-61b441fcc2e5" name="Default Changelist" comment="" />
+    <list default="true" id="749b92d3-c99b-4f74-9413-61b441fcc2e5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/Menu/AdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/Menu/AdminMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/Menu/UserMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/Menu/UserMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/base/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/FactoryMethod/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/base/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/base/repository/BaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/base/repository/impl/BaseRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/base/repository/impl/BaseRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/AddressRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/AddressRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/AdminRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/AdminRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/ArticleRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/ArticleRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/CategoryRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/CategoryRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/RoleRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/RoleRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/TagRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/TagRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/Impl/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/services/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/services/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/services/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/services/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/services/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/services/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/services/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/services/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/services/TagService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ir/maktab/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ir/maktab/MainApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ir/maktab/Menu/AdminMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ir/maktab/Menu/AdminMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ir/maktab/Menu/UserMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ir/maktab/Menu/UserMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ir/maktab/base/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ir/maktab/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ir/maktab/services/UserService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +86,9 @@
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ir.maktab.FactoryMethod" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ir.maktab.services" />
@@ -130,6 +159,7 @@
       <workItem from="1601147492301" duration="76000" />
       <workItem from="1601147605047" duration="133000" />
       <workItem from="1601147757425" duration="286000" />
+      <workItem from="1601228075882" duration="1593000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Address And SingleTon EntityManagerGenerator And Optimizing RepositoryImpls">
       <created>1601217541633</created>
@@ -138,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601217541633</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adding Address And SingleTon EntityManagerGenerator And Optimizing RepositoryImpls">
+      <created>1601217679291</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601217679291</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +193,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Assign_Data_Sources/0.0.1536.824@0.0.1536.824" timestamp="1600622234510" />
+    <state x="361" y="71" key="#Auto_Import" timestamp="1601228976255">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Auto_Import/0.0.1536.824@0.0.1536.824" timestamp="1601228976255" />
     <state x="361" y="71" key="#Inspections" timestamp="1600547233685">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -168,18 +209,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1600327753735" />
-    <state x="574" y="88" key="#com.intellij.ide.util.MemberChooser" timestamp="1601217248007">
+    <state x="574" y="88" key="#com.intellij.ide.util.MemberChooser" timestamp="1601229398468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="88" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1601217248007" />
+    <state x="574" y="88" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1601229398468" />
     <state x="499" y="188" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1600623348407">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="188" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1600623348407" />
-    <state x="435" y="329" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1601137475409">
+    <state x="435" y="329" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1601228352089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="435" y="329" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1601137475409" />
+    <state x="435" y="329" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1601228352089" />
     <state x="561" y="253" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1600577344426">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -196,30 +237,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601138573809" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1601217667468">
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1601217676858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601217667468" />
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601217676858" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1600543965826">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600543965826" />
-    <state width="1493" height="237" key="GridCell.Tab.0.bottom" timestamp="1601217522646">
+    <state width="746" height="237" key="GridCell.Tab.0.bottom" timestamp="1601229800698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="237" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601217522646" />
-    <state width="1493" height="237" key="GridCell.Tab.0.center" timestamp="1601217522645">
+    <state width="746" height="237" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601229800698" />
+    <state width="746" height="237" key="GridCell.Tab.0.center" timestamp="1601229800698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="237" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601217522645" />
-    <state width="1493" height="237" key="GridCell.Tab.0.left" timestamp="1601217522645">
+    <state width="746" height="237" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601229800698" />
+    <state width="746" height="237" key="GridCell.Tab.0.left" timestamp="1601229800698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="237" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601217522645" />
-    <state width="1493" height="237" key="GridCell.Tab.0.right" timestamp="1601217522646">
+    <state width="746" height="237" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601229800698" />
+    <state width="746" height="237" key="GridCell.Tab.0.right" timestamp="1601229800698">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="237" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601217522646" />
+    <state width="746" height="237" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601229800698" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1600634841265">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -228,10 +269,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601147777941" />
-    <state x="361" y="127" key="Vcs.Push.Dialog.v2" timestamp="1601217548999">
+    <state x="361" y="127" key="Vcs.Push.Dialog.v2" timestamp="1601217683455">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="127" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601217548999" />
+    <state x="361" y="127" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601217683454" />
     <state x="161" y="193" width="1350" height="638" key="dock-window-1" timestamp="1601137304130">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -248,9 +289,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="37" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1600625796763" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601213169362">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601228482989">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601213169362" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601228482989" />
   </component>
 </project>

@@ -89,7 +89,4 @@ public class AdminService {
 
     }
 
-    public static void close() {
-        repository.close();
-    }
 }

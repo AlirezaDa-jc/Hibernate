@@ -91,7 +91,4 @@ public class RoleService {
         repository.insert(newRole);
     }
 
-    public static void close() {
-        repository.close();
-    }
 }

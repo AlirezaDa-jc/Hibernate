@@ -59,10 +59,6 @@ public class RoleRepositoryImpl extends BaseRepositoryImpl<Role,Integer> impleme
         super.delete(role);
     }
 
-    public void close() {
-        super.close();
-    }
-
     public void display() {
         List<Role> all = findAll();
         all.forEach((c) -> System.out.println("Title: " + c.getRoleTitle()));

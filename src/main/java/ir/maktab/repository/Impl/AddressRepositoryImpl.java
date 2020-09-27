@@ -61,7 +61,4 @@ public class AddressRepositoryImpl extends BaseRepositoryImpl<Address, Integer> 
         super.delete(address);
     }
 
-    public void close() {
-        super.close();
-    }
 }

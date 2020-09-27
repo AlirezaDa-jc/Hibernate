@@ -64,9 +64,6 @@ public class TagRepositoryImpl extends BaseRepositoryImpl<Tag,Integer> implement
         super.delete(tag);
     }
 
-    public void close() {
-        super.close();
-    }
 
     @Override
     public void displayAll() {

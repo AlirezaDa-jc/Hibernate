@@ -60,10 +60,6 @@ public class CategoryRepositoryImpl extends BaseRepositoryImpl<Category,Integer>
         super.delete(article);
     }
 
-    public void close() {
-        super.close();
-    }
-
     @Override
     public void display() {
         em.getTransaction().begin();

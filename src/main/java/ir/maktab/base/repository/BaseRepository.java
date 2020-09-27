@@ -23,6 +23,5 @@ public interface BaseRepository<E, PK extends Number> {
 
     void delete(E e);
 
-    void close();
 
 }

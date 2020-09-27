@@ -88,7 +88,4 @@ public class UserRepositoryImpl extends BaseRepositoryImpl<User, Integer> implem
         super.delete(user);
     }
 
-    public void close() {
-        super.close();
-    }
 }

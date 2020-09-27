@@ -54,7 +54,4 @@ public abstract class BaseRepositoryImpl<E, PK extends Number>  implements BaseR
         em.getTransaction().commit();
     }
 
-    public void close() {
-        em.close();
-    }
 }

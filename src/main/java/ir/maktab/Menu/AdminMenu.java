@@ -1,11 +1,12 @@
 package ir.maktab.Menu;
 
+import ir.maktab.FactoryMethod.MenuImpl;
 import ir.maktab.MainApp;
 import ir.maktab.Scan;
-import ir.maktab.base.Menu;
+import ir.maktab.FactoryMethod.Menu;
 import ir.maktab.services.*;
 
-public class AdminMenu extends Menu {
+public class AdminMenu extends MenuImpl implements Menu {
     private Scan sc = null;
 
     public AdminMenu() {
@@ -19,7 +20,9 @@ public class AdminMenu extends Menu {
         System.out.println("To Add a Tag Press 4");
         System.out.println("To Edit a User's Role Press 5");
         System.out.println("To add a Role Press 6");
-        System.out.println("To add a Tag to an Article 7");
+        System.out.println("To add a Tag to an Article Press 7");
+        System.out.println("To Delete a User Press 8");
+        System.out.println("To Log out 9");
 
     }
 
@@ -54,17 +57,11 @@ public class AdminMenu extends Menu {
                 case 7:
                     TagService.addArticle();
                     break;
-                case 9:
+                case 8:
                     UserService.delete();
                     break;
-                case 8:
+                case 9:
                     flag = false;
-                    TagService.close();
-                    ArticleService.close();
-                    AdminService.close();
-                    UserService.close();
-                    RoleService.close();
-                    CategoryService.close();
             }
         }
     }

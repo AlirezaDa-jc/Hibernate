@@ -2,7 +2,6 @@ package ir.maktab.services;
 
 import ir.maktab.MainApp;
 import ir.maktab.Scan;
-import ir.maktab.Menu.UserMenu;
 import ir.maktab.entities.Address;
 import ir.maktab.entities.Role;
 import ir.maktab.entities.User;
@@ -59,8 +58,8 @@ public class UserService {
                     return true;
                 }
                 break;
-            case "EXIT":
-                System.exit(0);
+            default:
+                return false;
         }
         return false;
     }
@@ -87,16 +86,9 @@ public class UserService {
 
     }
 
-    public static void close() {
-        repository.close();
-    }
 
-    public static void userLogin() {
-        boolean checkAccount = signInOrLogin();
-        while (!checkAccount) {
-            checkAccount =  signInOrLogin();
-        }
-        new UserMenu().menuHandler();
+    public static boolean userLogin() {
+        return signInOrLogin();
     }
 
     public static User findUser(String name) {

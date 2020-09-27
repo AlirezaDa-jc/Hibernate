@@ -49,7 +49,4 @@ public class CategoryService {
         repository.insert(category);
     }
 
-    public static void close() {
-        repository.close();
-    }
 }

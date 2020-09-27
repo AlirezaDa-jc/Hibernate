@@ -1,14 +1,15 @@
 package ir.maktab.Menu;
 
 
+import ir.maktab.FactoryMethod.MenuImpl;
 import ir.maktab.MainApp;
 import ir.maktab.Scan;
-import ir.maktab.base.Menu;
+import ir.maktab.FactoryMethod.Menu;
 import ir.maktab.services.ArticleService;
 import ir.maktab.services.CategoryService;
 import ir.maktab.services.UserService;
 
-public class UserMenu extends Menu {
+public class UserMenu extends MenuImpl implements Menu {
     private Scan sc = null;
 
     public UserMenu() {
@@ -73,9 +74,6 @@ public class UserMenu extends Menu {
                     break;
                 case 7:
                     flag = false;
-                    UserService.close();
-                    ArticleService.close();
-                    CategoryService.close();
                     break;
                 default:
                     System.out.println("Invalid Number");

@@ -1,5 +1,7 @@
 package ir.maktab;
 
+import ir.maktab.FactoryMethod.Menu;
+import ir.maktab.FactoryMethod.MenuFactory;
 import ir.maktab.Menu.AdminMenu;
 import ir.maktab.Menu.UserMenu;
 import ir.maktab.entities.Role;
@@ -17,26 +19,33 @@ public class MainApp {
 
     public static void main(String[] args) {
             checkRole();
-            UserService.userLogin();
     }
 
     private static void checkRole() {
-        if(RoleService.checkRole()) {
-            Role role1 = RoleService.getRole();
-            switch (role1.getRoleTitle()) {
-                case "USER":
-                    UserService.userLogin();
-                    new UserMenu().menuHandler();
-                    break;
-                case "ADMIN":
-                    if(AdminService.adminLogin()) {
-                        new AdminMenu().menuHandler();
-                    }
-                    break;
-            }
+        MenuFactory menuFactory =  new MenuFactory();
+        while (true) {
+            Menu menu = menuFactory.getMenu();
+            menu.menuHandler();
         }
-
     }
+
+//    private static void checkRole() {
+//        if(RoleService.checkRole()) {
+//            Role role1 = RoleService.getRole();
+//            switch (role1.getRoleTitle()) {
+//                case "USER":
+//                    UserService.userLogin();
+//                    new UserMenu().menuHandler();
+//                    break;
+//                case "ADMIN":
+//                    if(AdminService.adminLogin()) {
+//                        new AdminMenu().menuHandler();
+//                    }
+//                    break;
+//            }
+//        }
+//
+//    }
 
 
 }

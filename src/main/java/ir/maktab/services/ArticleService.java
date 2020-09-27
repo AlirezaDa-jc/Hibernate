@@ -169,9 +169,6 @@ public class ArticleService {
         return id;
     }
 
-    public static void close() {
-        repository.close();
-    }
 
     public static void updateAdmin(int id) {
         String update = sc.getString("What You Want To Edit: (Title/Brief/Content/CreateDate/" +

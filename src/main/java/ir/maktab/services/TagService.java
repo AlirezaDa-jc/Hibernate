@@ -49,7 +49,4 @@ public class TagService {
         return repository.findById(id);
     }
 
-    public static void close() {
-        repository.close();
-    }
 }
