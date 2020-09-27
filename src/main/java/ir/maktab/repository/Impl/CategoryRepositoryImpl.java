@@ -7,6 +7,8 @@ import ir.maktab.repository.CategoryRepository;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class CategoryRepositoryImpl extends BaseRepositoryImpl<Category,Integer> implements CategoryRepository {
 
@@ -54,6 +56,14 @@ public class CategoryRepositoryImpl extends BaseRepositoryImpl<Category,Integer>
             return resultList.get(0);
         }
         return null;
+    }
+
+    @Override
+    public List<Category> findAllFiltered(Predicate<Category> predicate) {
+        List<Category> all = findAll();
+        return all.stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
     }
 
     @Override

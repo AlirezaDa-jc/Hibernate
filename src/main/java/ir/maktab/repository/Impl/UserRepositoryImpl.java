@@ -1,12 +1,16 @@
 package ir.maktab.repository.Impl;
 
 import ir.maktab.base.repository.impl.BaseRepositoryImpl;
+import ir.maktab.entities.UserInfo;
 import ir.maktab.repository.UserRepository;
 import ir.maktab.services.UserService;
 import ir.maktab.entities.User;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class UserRepositoryImpl extends BaseRepositoryImpl<User, Integer> implements UserRepository {
 
@@ -32,10 +36,18 @@ public class UserRepositoryImpl extends BaseRepositoryImpl<User, Integer> implem
 
     @Override
     public void displayAll() {
-        List<User> all = findAll();
-        for(User user : all){
-            System.out.println("Name: " + user.getName() + " ID: " + user.getId());
-        }
+        Function<User,UserInfo> function = (c) ->{
+            if(c != null){
+                UserInfo userInfo = new UserInfo();
+                userInfo.setUser(c);
+                userInfo.setInfo("ID: " + c.getId() + "\nName: " + c.getName() +"\nAddress: "
+                        + c.getAddress().getAddress());
+                return userInfo;
+            }
+            return null;
+        };
+        List<UserInfo> all = findUsersInfo(function);
+        all.forEach((c) -> System.out.println(c.getInfo()));
     }
 
     @Override
@@ -83,6 +95,22 @@ public class UserRepositoryImpl extends BaseRepositoryImpl<User, Integer> implem
             return resultList.get(0);
         }
         return null;
+    }
+
+    @Override
+    public List<User> findAllFiltered(Predicate<User> predicate) {
+        List<User> all = findAll();
+        return all.stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<UserInfo> findUsersInfo(Function<User, UserInfo> function) {
+        List<User> all = findAll();
+        return all.stream()
+                .map(function)
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -65,7 +65,7 @@ public class UserMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Me
                     UserService.changePassword();
                     break;
                 case 5:
-                    ArticleService.displayAll();
+                    ArticleService.displayAllFiltered();
                     if (checkChoice()){
                         ArticleService.displayAnArticle();
                     }

@@ -23,7 +23,8 @@ public class AdminMenu extends FactoryMethod.MenuImpl implements FactoryMethod.M
         System.out.println("To add a Role Press 6");
         System.out.println("To add a Tag to an Article Press 7");
         System.out.println("To Delete a User Press 8");
-        System.out.println("To Log out 9");
+        System.out.println("To See Users Press 9");
+        System.out.println("To Log out 10");
 
     }
 
@@ -62,6 +63,9 @@ public class AdminMenu extends FactoryMethod.MenuImpl implements FactoryMethod.M
                     UserService.delete();
                     break;
                 case 9:
+                    UserService.display();
+                    break;
+                case 10:
                     flag = false;
             }
         }

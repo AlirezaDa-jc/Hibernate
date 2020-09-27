@@ -3,10 +3,14 @@ package ir.maktab.repository.Impl;
 import ir.maktab.base.repository.impl.BaseRepositoryImpl;
 import ir.maktab.entities.Admin;
 import ir.maktab.entities.User;
+import ir.maktab.entities.UserInfo;
 import ir.maktab.repository.AdminRepository;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 
 public class AdminRepositoryImpl extends BaseRepositoryImpl<Admin, Integer> implements AdminRepository {
@@ -28,6 +32,8 @@ public class AdminRepositoryImpl extends BaseRepositoryImpl<Admin, Integer> impl
         em.getTransaction().rollback();
         return null;
     }
+
+
 
     @Override
     protected Class<Admin> getEntityClass() {
@@ -73,6 +79,14 @@ public class AdminRepositoryImpl extends BaseRepositoryImpl<Admin, Integer> impl
             return resultList.get(0);
         }
         return null;
+    }
+
+    @Override
+    public List<Admin> findAllFiltered(Predicate<Admin> predicate) {
+        List<Admin> all = findAll();
+        return all.stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
     }
 
     @Override

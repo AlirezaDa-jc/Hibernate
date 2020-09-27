@@ -9,6 +9,8 @@ import ir.maktab.services.UserService;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class ArticleRepositoryImpl extends BaseRepositoryImpl<Article, Integer> implements ArticleRepository {
 
@@ -32,9 +34,7 @@ public class ArticleRepositoryImpl extends BaseRepositoryImpl<Article, Integer> 
                 + "\nContent: " + a.getContent() + "\nCreate Date: " + a.getCreateDate() + "\nAuthor: " +
                 a.getUser().getName() + "\nIs Published: " + a.isPublished() + "\nCategory: "
                 + a.getCategory().getTitle());
-        for (Tag tag : a.getTags()) {
-            System.out.println("\nTags: " + tag.getTitle());
-        }
+        a.getTags().forEach((c) -> System.out.println("\nTags: " + c.getTitle()));
     }
 
 
@@ -86,6 +86,14 @@ public class ArticleRepositoryImpl extends BaseRepositoryImpl<Article, Integer> 
     }
 
     @Override
+    public List<Article> findAllFiltered(Predicate<Article> predicate) {
+        List<Article> all = findAll();
+        return all.stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public void delete(Article article) {
         super.delete(article);
     }
@@ -96,5 +104,12 @@ public class ArticleRepositoryImpl extends BaseRepositoryImpl<Article, Integer> 
         all.forEach((a) -> System.out.println("ID: " + a.getId() + "\nTitle: " + a.getTitle() +
                 "\nBrief: " + a.getBrief()));
 
+    }
+
+    @Override
+    public void displayAllFiltered(Predicate<Article> predicate) {
+        List<Article> allFiltered = findAllFiltered(predicate);
+        allFiltered.forEach((a) -> System.out.println("ID: " + a.getId() + "\nTitle: " + a.getTitle() +
+                "\nBrief: " + a.getBrief()));
     }
 }

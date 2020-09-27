@@ -12,6 +12,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class TagRepositoryImpl extends BaseRepositoryImpl<Tag,Integer> implements TagRepository {
     @Override
@@ -58,6 +60,14 @@ public class TagRepositoryImpl extends BaseRepositoryImpl<Tag,Integer> implement
             return resultList.get(0);
         }
         return null;
+    }
+
+    @Override
+    public List<Tag> findAllFiltered(Predicate<Tag> predicate) {
+        List<Tag> all = findAll();
+        return all.stream()
+                .filter(predicate).
+                collect(Collectors.toList());
     }
 
     @Override

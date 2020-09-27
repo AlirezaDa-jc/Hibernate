@@ -7,6 +7,8 @@ import ir.maktab.repository.RoleRepository;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class RoleRepositoryImpl extends BaseRepositoryImpl<Role,Integer> implements RoleRepository {
     @Override
@@ -53,6 +55,14 @@ public class RoleRepositoryImpl extends BaseRepositoryImpl<Role,Integer> impleme
             return resultList.get(0);
         }
         return null;
+    }
+
+    @Override
+    public List<Role> findAllFiltered(Predicate<Role> predicate) {
+        List<Role> all = findAll();
+        return all.stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
+import java.util.function.Predicate;
 
 public interface BaseRepository<E, PK extends Number> {
 
@@ -20,6 +21,8 @@ public interface BaseRepository<E, PK extends Number> {
     List<E> findAll();
 
     E findByTitle(String title);
+
+    List<E> findAllFiltered(Predicate<E> predicate);
 
     void delete(E e);
 

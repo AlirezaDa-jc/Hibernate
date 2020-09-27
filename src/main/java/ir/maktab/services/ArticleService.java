@@ -10,6 +10,7 @@ import ir.maktab.repository.ArticleRepository;
 import ir.maktab.repository.Impl.ArticleRepositoryImpl;
 
 import java.util.Set;
+import java.util.function.Predicate;
 
 public class ArticleService {
 
@@ -230,5 +231,10 @@ public class ArticleService {
         Tag tag = TagService.getTag(id);
         a.addTag(tag);
         tag.addArticle(a);
+    }
+
+    public static void displayAllFiltered() {
+        Predicate<Article> predicate = Article::isPublished;
+        repository.displayAllFiltered(predicate);
     }
 }

@@ -8,6 +8,8 @@ import ir.maktab.repository.AddressRepository;
 
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class AddressRepositoryImpl extends BaseRepositoryImpl<Address, Integer> implements AddressRepository {
 
@@ -55,6 +57,14 @@ public class AddressRepositoryImpl extends BaseRepositoryImpl<Address, Integer> 
             return resultList.get(0);
         }
         return null;
+    }
+
+    @Override
+    public List<Address> findAllFiltered(Predicate<Address> predicate) {
+        List<Address> all = findAll();
+        return all.stream()
+                .filter(predicate)
+                .collect(Collectors.toList());
     }
 
     @Override

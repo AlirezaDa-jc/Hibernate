@@ -102,4 +102,8 @@ public class UserService {
         int id = Integer.parseInt(sc.getString("ID Of User"));
         repository.deleteById(id);
     }
+
+    public static void display() {
+        repository.displayAll();
+    }
 }
