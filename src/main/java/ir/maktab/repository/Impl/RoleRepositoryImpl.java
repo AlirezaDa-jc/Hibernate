@@ -1,76 +1,66 @@
 package ir.maktab.repository.Impl;
 
+import ir.maktab.base.repository.impl.BaseRepositoryImpl;
 import ir.maktab.entities.Role;
+import ir.maktab.entities.User;
 import ir.maktab.repository.RoleRepository;
-import ir.maktab.services.RoleService;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class RoleRepositoryImpl implements RoleRepository {
-    private EntityManager em = null;
-    private EntityManagerFactory emf = null;
-
-    public RoleRepositoryImpl() {
-        emf = Persistence.createEntityManagerFactory("my-persistence-unit");
-        em = emf.createEntityManager();
+public class RoleRepositoryImpl extends BaseRepositoryImpl<Role,Integer> implements RoleRepository {
+    @Override
+    protected Class<Role> getEntityClass() {
+        return Role.class;
     }
 
     @Override
-    public void close() {
-        em.close();
-        emf.close();
-    }
-
-    @Override
-    public Role findById(Integer id) {
-        return em.find(Role.class ,id);
-    }
-
-    @Override
-    public void deleteById(Integer id) {
-        Role r = findById(id);
-        delete(r);
+    public void insert(Role role) {
+        super.insert(role);
     }
 
     @Override
     public Role update(Role role) {
-        em.getTransaction().begin();
-        em.merge(role);
-        RoleService.setRole(role);
-        em.getTransaction().commit();
-        return role;
+        return super.update(role);
     }
 
     @Override
-    public List<Role> findAll(){
-        em.getTransaction().begin();
-        TypedQuery<Role> query = em.createQuery("SELECT u FROM Role u", Role.class);
-        List <Role> roles = query.getResultList();
-        em.getTransaction().commit();
-        return roles;
+    public Role findById(Integer id) {
+        return super.findById(id);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        super.deleteById(id);
+    }
+
+    @Override
+    public List<Role> findAll() {
+        return super.findAll();
     }
 
     @Override
     public Role findByTitle(String title) {
         em.getTransaction().begin();
         TypedQuery<Role> query = em.createQuery(
-                "SELECT u FROM Role u where u.title=:title",
+                "SELECT u FROM Role u where u.name=:title",
                 Role.class);
+
         query.setParameter("title", title);
-        List<Role> results = query.getResultList();
-        em.getTransaction().commit();
-        return results.get(0);
+        List<Role> resultList = query.getResultList();
+        if (resultList.size() > 0) {
+            return resultList.get(0);
+        }
+        return null;
     }
 
     @Override
     public void delete(Role role) {
-        em.getTransaction().begin();
-        em.remove(role);
-        em.getTransaction().commit();
+        super.delete(role);
+    }
+
+    public void close() {
+        super.close();
     }
 
     public void display() {
@@ -78,10 +68,4 @@ public class RoleRepositoryImpl implements RoleRepository {
         all.forEach((c) -> System.out.println("Title: " + c.getRoleTitle()));
     }
 
-    @Override
-    public void insert(Role newRole) {
-        em.getTransaction().begin();
-        em.persist(newRole);
-        em.getTransaction().commit();
-    }
 }

@@ -22,9 +22,20 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "roleid")
     private Role role;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "addressId")
+    private Address address;
 
-    @OneToMany(mappedBy="user")
+    @OneToMany(mappedBy="user",cascade = CascadeType.ALL)
     private Set<Article> articles = new HashSet<>();
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public Set<Article> getArticles() {
         return articles;

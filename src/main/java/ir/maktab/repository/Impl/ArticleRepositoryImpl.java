@@ -1,29 +1,18 @@
 package ir.maktab.repository.Impl;
 
+import ir.maktab.base.repository.impl.BaseRepositoryImpl;
+import ir.maktab.entities.Article;
 import ir.maktab.entities.Tag;
+import ir.maktab.entities.User;
 import ir.maktab.repository.ArticleRepository;
 import ir.maktab.services.UserService;
-import ir.maktab.entities.Article;
-import ir.maktab.entities.User;
 
-import javax.persistence.*;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class ArticleRepositoryImpl implements ArticleRepository {
-    private EntityManager em = null;
-    private EntityManagerFactory emf = null;
+public class ArticleRepositoryImpl extends BaseRepositoryImpl<Article, Integer> implements ArticleRepository {
 
-    public ArticleRepositoryImpl() {
-        emf = Persistence.createEntityManagerFactory("my-persistence-unit");
-        em = emf.createEntityManager();
-    }
-@Override
-    public void insert(Article article) {
-        em.getTransaction().begin();
-        em.persist(article);
-        em.getTransaction().commit();
-    }
-@Override
+    @Override
     public void displayAUserArticle() {
         em.getTransaction().begin();
         User user = UserService.getUser();
@@ -43,56 +32,64 @@ public class ArticleRepositoryImpl implements ArticleRepository {
                 + "\nContent: " + a.getContent() + "\nCreate Date: " + a.getCreateDate() + "\nAuthor: " +
                 a.getUser().getName() + "\nIs Published: " + a.isPublished() + "\nCategory: "
                 + a.getCategory().getTitle());
-        for(Tag tag : a.getTags()){
+        for (Tag tag : a.getTags()) {
             System.out.println("\nTags: " + tag.getTitle());
         }
     }
 
+
+    @Override
+    protected Class<Article> getEntityClass() {
+        return Article.class;
+    }
+
+    @Override
+    public void insert(Article article) {
+        super.insert(article);
+    }
+
     @Override
     public Article update(Article article) {
-        em.getTransaction().begin();
-        em.merge(article);
-        em.getTransaction().commit();
-        return article;
+        return super.update(article);
     }
 
     @Override
     public Article findById(Integer id) {
-        return em.find(Article.class,id);
+        return super.findById(id);
     }
 
     @Override
     public void deleteById(Integer id) {
-        Article a = findById(id);
-        delete(a);
+        super.deleteById(id);
     }
 
     @Override
     public List<Article> findAll() {
-        em.getTransaction().begin();
-        TypedQuery<Article> query = em.createQuery("select entity from Article entity",Article.class);
-        List<Article> resultList = query.getResultList();
-        em.getTransaction().commit();
-        return resultList;
+        return super.findAll();
     }
 
     @Override
     public Article findByTitle(String title) {
         em.getTransaction().begin();
         TypedQuery<Article> query = em.createQuery(
-                "SELECT c FROM  Article c where c.title=:name",
+                "SELECT u FROM Article u where u.title=:title",
                 Article.class);
-        query.setParameter("name",title);
+
+        query.setParameter("title", title);
         List<Article> resultList = query.getResultList();
-        em.getTransaction().commit();
-        return resultList.get(0);
+        if (resultList.size() > 0) {
+            return resultList.get(0);
+        }
+        return null;
     }
 
     @Override
     public void delete(Article article) {
-        em.getTransaction().begin();
-        em.remove(article);
-        em.getTransaction().commit();
+        super.delete(article);
+    }
+
+    public void close() {
+        super.close();
     }
 
     @Override
@@ -101,10 +98,5 @@ public class ArticleRepositoryImpl implements ArticleRepository {
         all.forEach((a) -> System.out.println("ID: " + a.getId() + "\nTitle: " + a.getTitle() +
                 "\nBrief: " + a.getBrief()));
 
-    }
-@Override
-    public void close() {
-        em.close();
-        emf.close();
     }
 }

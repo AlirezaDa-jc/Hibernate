@@ -13,10 +13,10 @@ public class Role {
     @Column(name = "title" , nullable = false)
     private String roleTitle;
 
-    @OneToMany(mappedBy = "role")
+    @OneToMany(mappedBy = "role",cascade = CascadeType.ALL)
     private Set<User> users = new HashSet<>();
 
-    @OneToMany(mappedBy = "role")
+    @OneToMany(mappedBy = "role",cascade = CascadeType.ALL)
     private Set<Admin> admins = new HashSet<>();
 
     public Set<User> getUsers() {

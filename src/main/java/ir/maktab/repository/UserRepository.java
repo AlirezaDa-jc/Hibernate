@@ -8,4 +8,5 @@ public interface UserRepository  extends BaseRepository<User,Integer> {
 
     boolean userLogin(String userName, String password);
 
+    void displayAll();
 }

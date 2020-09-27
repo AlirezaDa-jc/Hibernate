@@ -1,5 +1,6 @@
 package ir.maktab.repository.Impl;
 
+import ir.maktab.base.repository.impl.BaseRepositoryImpl;
 import ir.maktab.repository.UserRepository;
 import ir.maktab.services.UserService;
 import ir.maktab.entities.User;
@@ -7,22 +8,7 @@ import ir.maktab.entities.User;
 import javax.persistence.*;
 import java.util.List;
 
-public class UserRepositoryImpl implements UserRepository {
-
-    private EntityManager em = null;
-    private EntityManagerFactory emf = null;
-
-    public UserRepositoryImpl() {
-        emf = Persistence.createEntityManagerFactory("my-persistence-unit");
-        em = emf.createEntityManager();
-    }
-
-    @Override
-    public void insert(User user) {
-        em.getTransaction().begin();
-        em.persist(user);
-        em.getTransaction().commit();
-    }
+public class UserRepositoryImpl extends BaseRepositoryImpl<User, Integer> implements UserRepository {
 
     @Override
     public boolean userLogin(String userName, String password) {
@@ -31,12 +17,12 @@ public class UserRepositoryImpl implements UserRepository {
                 "SELECT u FROM User u where u.name=:name and u.password =:password",
                 User.class);
 
-        query.setParameter("name",userName);
-        query.setParameter("password",password);
-        if(query.getResultList().size() > 0) {
-            User u= query.getSingleResult();
+        query.setParameter("name", userName);
+        query.setParameter("password", password);
+        if (query.getResultList().size() > 0) {
+            User u = query.getSingleResult();
             UserService.setUser(u);
-            System.out.println("Welcome BaCk!"+u.getName() +" ^_^ ");
+            System.out.println("Welcome BaCk!" + u.getName() + " ^_^ ");
             em.getTransaction().commit();
             return true;
         }
@@ -45,59 +31,64 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    public void displayAll() {
+        List<User> all = findAll();
+        for(User user : all){
+            System.out.println("Name: " + user.getName() + " ID: " + user.getId());
+        }
+    }
+
+    @Override
+    protected Class<User> getEntityClass() {
+        return User.class;
+    }
+
+    @Override
+    public void insert(User user) {
+        super.insert(user);
+    }
+
+    @Override
     public User update(User user) {
-        em.getTransaction().begin();
-        em.merge(user);
-        em.getTransaction().commit();
-        return user;
+        return super.update(user);
     }
 
     @Override
     public User findById(Integer id) {
-        return null;
+        return super.findById(id);
     }
 
     @Override
     public void deleteById(Integer id) {
-        User entity = findById(id);
-        if(entity==null){
-            System.out.println("Invalid ID");
-            return;
-        }
-        delete(entity);
+        super.deleteById(id);
     }
 
     @Override
     public List<User> findAll() {
-        em.getTransaction().begin();
-        TypedQuery<User> query = em.createQuery("select entity from User entity",User.class);
-        List<User> resultList = query.getResultList();
-        em.getTransaction().commit();
-        return resultList;
+        return super.findAll();
     }
 
     @Override
-    public void close() {
-        em.close();
-        emf.close();
-    }
-
-    @Override
-    public User findByTitle(String name) {
+    public User findByTitle(String title) {
         em.getTransaction().begin();
         TypedQuery<User> query = em.createQuery(
-                "SELECT c FROM  User c where c.name=:name",
+                "SELECT u FROM User u where u.name=:title",
                 User.class);
-        query.setParameter("name",name);
+
+        query.setParameter("title", title);
         List<User> resultList = query.getResultList();
-        em.getTransaction().commit();
-        return resultList.get(0);
+        if (resultList.size() > 0) {
+            return resultList.get(0);
+        }
+        return null;
     }
 
     @Override
-    public void delete(User newUser) {
-        em.getTransaction().begin();
-        em.remove(newUser);
-        em.getTransaction().commit();
+    public void delete(User user) {
+        super.delete(user);
+    }
+
+    public void close() {
+        super.close();
     }
 }

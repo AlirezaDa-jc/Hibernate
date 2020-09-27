@@ -1,21 +1,15 @@
 package ir.maktab.repository.Impl;
 
+import ir.maktab.base.repository.impl.BaseRepositoryImpl;
 import ir.maktab.entities.Admin;
-import ir.maktab.entities.Category;
+import ir.maktab.entities.User;
 import ir.maktab.repository.AdminRepository;
 
-import javax.persistence.*;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 
-public class AdminRepositoryImpl implements AdminRepository {
-    private EntityManager em = null;
-    private EntityManagerFactory emf = null;
-
-    public AdminRepositoryImpl() {
-        emf = Persistence.createEntityManagerFactory("my-persistence-unit");
-        em = emf.createEntityManager();
-    }
+public class AdminRepositoryImpl extends BaseRepositoryImpl<Admin, Integer> implements AdminRepository {
 
     @Override
     public Admin adminLogin(String userName, String password) {
@@ -23,11 +17,11 @@ public class AdminRepositoryImpl implements AdminRepository {
         TypedQuery<Admin> query = em.createQuery(
                 "SELECT a FROM Admin  a where a.name=:name and a.password =:password",
                 Admin.class);
-        query.setParameter("name",userName);
-        query.setParameter("password",password);
-        if(query.getResultList().size() > 0) {
-            Admin a= query.getSingleResult();
-            System.out.println("Welcome BaCk!"+a.getName() +" ^_^ ");
+        query.setParameter("name", userName);
+        query.setParameter("password", password);
+        if (query.getResultList().size() > 0) {
+            Admin a = query.getSingleResult();
+            System.out.println("Welcome BaCk!" + a.getName() + " ^_^ ");
             em.getTransaction().commit();
             return a;
         }
@@ -36,38 +30,33 @@ public class AdminRepositoryImpl implements AdminRepository {
     }
 
     @Override
+    protected Class<Admin> getEntityClass() {
+        return Admin.class;
+    }
+
+    @Override
     public void insert(Admin admin) {
-        em.getTransaction().begin();
-        em.persist(admin);
-        em.getTransaction().commit();
+        super.insert(admin);
     }
 
     @Override
     public Admin update(Admin admin) {
-        em.getTransaction().begin();
-        em.merge(admin);
-        em.getTransaction().commit();
-        return admin;
+        return super.update(admin);
     }
 
     @Override
     public Admin findById(Integer id) {
-        return em.find(Admin.class,id);
+        return super.findById(id);
     }
 
     @Override
     public void deleteById(Integer id) {
-        Admin admin = findById(id);
-        delete(admin);
+        super.deleteById(id);
     }
 
     @Override
     public List<Admin> findAll() {
-        em.getTransaction().begin();
-        TypedQuery<Admin> query = em.createQuery("select entity from Admin entity",Admin.class);
-        List<Admin> resultList = query.getResultList();
-        em.getTransaction().commit();
-        return resultList;
+        return super.findAll();
     }
 
     @Override
@@ -79,7 +68,7 @@ public class AdminRepositoryImpl implements AdminRepository {
 
         query.setParameter("title", title);
         List<Admin> resultList = query.getResultList();
-        if (resultList.size()>0) {
+        if (resultList.size() > 0) {
             return resultList.get(0);
         }
         return null;
@@ -87,14 +76,11 @@ public class AdminRepositoryImpl implements AdminRepository {
 
     @Override
     public void delete(Admin admin) {
-        em.getTransaction().begin();
-        em.remove(admin);
-        em.getTransaction().commit();
+        super.delete(admin);
     }
 
     public void close() {
-        em.close();
-        emf.close();
+        super.close();
     }
 
 }

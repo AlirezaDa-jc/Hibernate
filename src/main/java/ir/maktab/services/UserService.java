@@ -3,6 +3,7 @@ package ir.maktab.services;
 import ir.maktab.MainApp;
 import ir.maktab.Scan;
 import ir.maktab.Menu.UserMenu;
+import ir.maktab.entities.Address;
 import ir.maktab.entities.Role;
 import ir.maktab.entities.User;
 import ir.maktab.repository.Impl.UserRepositoryImpl;
@@ -37,6 +38,13 @@ public class UserService {
         Role role = RoleService.getRole();
         user.setRole(role);
         role.addUser(user);
+        Address address = new Address();
+        address.setAddress(sc.getString("Address: "));
+        user.setAddress(address);
+        address.setUser(user);
+        System.out.println("Before");
+        AddressService.insert(address);
+        System.out.println("After");
         repository.insert(user);
     }
 
@@ -97,5 +105,11 @@ public class UserService {
 
     public static void update(User newUser) {
         repository.delete(newUser);
+    }
+
+    public static void delete() {
+        repository.displayAll();
+        int id = Integer.parseInt(sc.getString("ID Of User"));
+        repository.deleteById(id);
     }
 }

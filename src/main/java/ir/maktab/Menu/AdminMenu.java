@@ -54,6 +54,9 @@ public class AdminMenu extends Menu {
                 case 7:
                     TagService.addArticle();
                     break;
+                case 9:
+                    UserService.delete();
+                    break;
                 case 8:
                     flag = false;
                     TagService.close();

@@ -1,57 +1,67 @@
 package ir.maktab.repository.Impl;
 
+import ir.maktab.base.repository.impl.BaseRepositoryImpl;
 import ir.maktab.entities.Category;
-import ir.maktab.entities.Tag;
+import ir.maktab.entities.User;
 import ir.maktab.repository.CategoryRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-public class CategoryRepositoryImpl implements CategoryRepository {
-    private EntityManager em = null;
-    private EntityManagerFactory emf = null;
+public class CategoryRepositoryImpl extends BaseRepositoryImpl<Category,Integer> implements CategoryRepository {
 
-    public CategoryRepositoryImpl() {
-        emf = Persistence.createEntityManagerFactory("my-persistence-unit");
-        em = emf.createEntityManager();
+    @Override
+    protected Class<Category> getEntityClass() {
+        return Category.class;
     }
 
     @Override
-    public void insert(Category category) {
-        em.getTransaction().begin();
-        em.persist(category);
-        em.getTransaction().commit();
+    public void insert(Category article) {
+        super.insert(article);
     }
 
     @Override
-    public Category update(Category category) {
-        em.getTransaction().begin();
-        em.merge(category);
-        em.getTransaction().commit();
-        return category;
+    public Category update(Category article) {
+        return super.update(article);
     }
 
     @Override
     public Category findById(Integer id) {
-        return em.find(Category.class,id);
+        return super.findById(id);
     }
 
     @Override
     public void deleteById(Integer id) {
-        Category c = findById(id);
-        delete(c);
+        super.deleteById(id);
     }
 
     @Override
     public List<Category> findAll() {
+        return super.findAll();
+    }
+
+    @Override
+    public Category findByTitle(String title) {
         em.getTransaction().begin();
-        TypedQuery<Category> query = em.createQuery("select entity from Category entity",Category.class);
+        TypedQuery<Category> query = em.createQuery(
+                "SELECT u FROM Category u where u.name=:title",
+                Category.class);
+
+        query.setParameter("title", title);
         List<Category> resultList = query.getResultList();
-        em.getTransaction().commit();
-        return resultList;
+        if (resultList.size() > 0) {
+            return resultList.get(0);
+        }
+        return null;
+    }
+
+    @Override
+    public void delete(Category article) {
+        super.delete(article);
+    }
+
+    public void close() {
+        super.close();
     }
 
     @Override
@@ -83,30 +93,5 @@ public class CategoryRepositoryImpl implements CategoryRepository {
         return true;
     }
 
-    @Override
-    public Category findByTitle(String title) {
-        em.getTransaction().begin();
-        TypedQuery<Category> query = em.createQuery(
-                "SELECT u FROM Category u where u.title=:title",
-                Category.class);
 
-        query.setParameter("title", title);
-        if (query.getResultList().size() > 0) {
-            return query.getSingleResult();
-        }
-        return null;
-    }
-
-    @Override
-    public void delete(Category category) {
-        em.getTransaction().begin();
-        em.remove(category);
-        em.getTransaction().commit();
-    }
-
-    @Override
-    public void close() {
-        em.close();
-        emf.close();
-    }
 }
