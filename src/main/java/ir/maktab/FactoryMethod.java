@@ -1,4 +1,4 @@
-package ir.maktab.Menu;
+package ir.maktab;
 
 import ir.maktab.Menu.AdminMenu;
 import ir.maktab.Menu.UserMenu;
@@ -21,17 +21,17 @@ public class FactoryMethod {
 
         public Menu getMenu(){
             String type = sc.getString("Enter Role: ");
-
-            switch (type.toUpperCase()) {
+            type = type.toUpperCase();
+            switch (type) {
                 case "USER":
+                    RoleService.checkRole(type);
                     if(UserService.userLogin()) {
-                        RoleService.checkRole(type);
                         return new UserMenu();
                     }
                     break;
                 case "ADMIN":
+                    RoleService.checkRole(type);
                     if (AdminService.adminLogin()) {
-                        RoleService.checkRole(type);
                         return new AdminMenu();
                     }
                     break;

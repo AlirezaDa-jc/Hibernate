@@ -1,8 +1,6 @@
 package ir.maktab;
 
 
-import ir.maktab.Menu.FactoryMethod;
-
 public class MainApp {
 
     private static Scan sc = Scan.getInstance();

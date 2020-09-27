@@ -22,8 +22,8 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "roleid")
     private Role role;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "addressId")
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Address address;
 
     @OneToMany(mappedBy="user",cascade = CascadeType.ALL)

@@ -39,12 +39,10 @@ public class UserService {
         role.addUser(user);
         Address address = new Address();
         address.setAddress(sc.getString("Address: "));
-        user.setAddress(address);
-        address.setUser(user);
-        System.out.println("Before");
         AddressService.insert(address);
-        System.out.println("After");
+        user.setAddress(address);
         repository.insert(user);
+
     }
 
     public static boolean signInOrLogin() {

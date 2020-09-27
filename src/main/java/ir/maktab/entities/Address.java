@@ -3,15 +3,18 @@ package ir.maktab.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="address")
+@Table(name = "address")
 public class Address {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, nullable = false, unique = true)
     private Integer id;
-    @Column(name= "address")
+    @Column(name = "addressCol")
     private String address;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "userId")
+
+    @OneToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL,
+            mappedBy = "address")
     private User user;
 
     public Integer getId() {
