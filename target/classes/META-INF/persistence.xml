@@ -5,7 +5,15 @@
 	<persistence-unit name="my-persistence-unit">
 		<description>Hibernate Tips</description>
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<class>ir.maktab.entities.Address</class>
+		<class>ir.maktab.entities.Admin</class>
+		<class>ir.maktab.entities.Article</class>
+		<class>ir.maktab.entities.Category</class>
+		<class>ir.maktab.entities.Role</class>
+		<class>ir.maktab.entities.Tag</class>
+		<class>ir.maktab.entities.User</class>
+		<class>ir.maktab.entities.UserInfo</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
@@ -13,6 +21,25 @@
 
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/article_2?autoReconnect=true&amp;characterEncoding=UTF-8&amp;userSSL=false" />
+			<property name="javax.persistence.jdbc.user" value="Alireza" />
+			<property name="javax.persistence.jdbc.password" value="Alireza" />
+			<property name="javax.persistence.schema-generation.database.action" value="update" />
+			<!--<property name="javax.persistence.sql-load-script-source" value="data.sql" />-->
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="my-persistence-unit2">
+		<description>Hibernate Tips2</description>
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>ir.maktab.entities.Website</class>
+		<class>ir.maktab.entities.WebsiteInfo</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<!--<property name="hibernate.generate_statistics" value="true" />-->
+
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/website_2?autoReconnect=true&amp;characterEncoding=UTF-8&amp;userSSL=false" />
 			<property name="javax.persistence.jdbc.user" value="Alireza" />
 			<property name="javax.persistence.jdbc.password" value="Alireza" />
 			<property name="javax.persistence.schema-generation.database.action" value="update" />

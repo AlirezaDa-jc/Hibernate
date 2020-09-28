@@ -10,11 +10,12 @@ public class MainApp {
     }
 
     public static void main(String[] args) {
-            checkRole();
+        check();
     }
 
-    private static void checkRole() {
-        FactoryMethod.MenuFactory menuFactory =  new FactoryMethod.MenuFactory();
+
+    private static void check() {
+        FactoryMethod.MenuFactory menuFactory = new FactoryMethod.MenuFactory();
         while (true) {
             FactoryMethod.Menu menu = menuFactory.getMenu();
             menu.menuHandler();
