@@ -1,10 +1,11 @@
 package ir.maktab.Menu;
 
-import ir.maktab.FactoryMethod;
 import ir.maktab.Scan;
+import ir.maktab.repository.FactoryMethod.Menu;
+import ir.maktab.repository.FactoryMethod.MenuImpl;
 import ir.maktab.services.WebsiteService;
 
-public class WebsiteMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Menu {
+public class WebsiteMenu extends MenuImpl implements Menu {
     private Scan sc;
     private int flagRole = 0;
     public WebsiteMenu() {

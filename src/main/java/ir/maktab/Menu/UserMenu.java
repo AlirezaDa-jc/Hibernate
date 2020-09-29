@@ -2,9 +2,9 @@ package ir.maktab.Menu;
 
 
 import ir.maktab.MainApp;
-import ir.maktab.MenuImpl;
 import ir.maktab.Scan;
 import ir.maktab.repository.FactoryMethod.Menu;
+import ir.maktab.repository.FactoryMethod.MenuImpl;
 import ir.maktab.services.ArticleService;
 import ir.maktab.services.UserService;
 
