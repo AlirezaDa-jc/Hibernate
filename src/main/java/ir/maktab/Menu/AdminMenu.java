@@ -4,7 +4,6 @@ package ir.maktab.Menu;
 import ir.maktab.FactoryMethod;
 import ir.maktab.MainApp;
 import ir.maktab.Scan;
-
 import ir.maktab.services.*;
 
 public class AdminMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Menu {
@@ -24,7 +23,8 @@ public class AdminMenu extends FactoryMethod.MenuImpl implements FactoryMethod.M
         System.out.println("To add a Tag to an Article Press 7");
         System.out.println("To Delete a User Press 8");
         System.out.println("To See Users Press 9");
-        System.out.println("To Log out 10");
+        System.out.println("To Go To Website DataBase Service Press 10");
+        System.out.println("To Log out 11");
 
     }
 
@@ -66,6 +66,11 @@ public class AdminMenu extends FactoryMethod.MenuImpl implements FactoryMethod.M
                     UserService.display();
                     break;
                 case 10:
+                    WebsiteMenu websiteMenu = new WebsiteMenu();
+                    websiteMenu.setFlagRole(0);
+                    websiteMenu.menuHandler();
+                    break;
+                case 11:
                     flag = false;
             }
         }

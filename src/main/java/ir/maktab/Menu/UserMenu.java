@@ -1,13 +1,10 @@
 package ir.maktab.Menu;
 
 
-
 import ir.maktab.FactoryMethod;
 import ir.maktab.MainApp;
 import ir.maktab.Scan;
-
 import ir.maktab.services.ArticleService;
-
 import ir.maktab.services.UserService;
 
 public class UserMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Menu {
@@ -18,18 +15,19 @@ public class UserMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Me
     }
 
     @Override
-    public void display(){
+    public void display() {
         System.out.println("See Your Articles Press 1");
         System.out.println("Edit Your Articles Press 2");
         System.out.println("Insert an Article Press 3");
         System.out.println("Edit Password Press 4");
         System.out.println("See All of Articles Press 5");
         System.out.println("Delete Your Articles Press 6");
-        System.out.println("Log Out Press 7");
+        System.out.println("To Add This Code To Your Website Press 7 ");
+        System.out.println("Log Out Press 8");
     }
 
-    public void setOption(Scan sc){
-        while(true) {
+    public void setOption(Scan sc) {
+        while (true) {
             try {
                 option = Integer.parseInt(sc.getString("Enter a Number: "));
                 super.setOption(option);
@@ -40,7 +38,7 @@ public class UserMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Me
         }
     }
 
-    public int getOption(){
+    public int getOption() {
         return super.getOption();
     }
 
@@ -66,7 +64,7 @@ public class UserMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Me
                     break;
                 case 5:
                     ArticleService.displayAllFiltered();
-                    if (checkChoice()){
+                    if (checkChoice()) {
                         ArticleService.displayAnArticle();
                     }
                     break;
@@ -74,6 +72,11 @@ public class UserMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Me
                     ArticleService.deleteArticleUser();
                     break;
                 case 7:
+                    WebsiteMenu websiteMenu = new WebsiteMenu();
+                    websiteMenu.setFlagRole(1);
+                    websiteMenu.menuHandler();
+                    break;
+                case 8:
                     flag = false;
                     break;
                 default:
