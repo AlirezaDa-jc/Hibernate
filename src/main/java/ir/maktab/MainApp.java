@@ -1,6 +1,9 @@
 package ir.maktab;
 
 
+import ir.maktab.repository.FactoryMethod.Menu;
+import ir.maktab.repository.FactoryMethod.MenuFactory;
+
 public class MainApp {
 
     private static Scan sc = Scan.getInstance();
@@ -15,10 +18,10 @@ public class MainApp {
 
 
     private static void check() {
-        FactoryMethod.MenuFactory menuFactory = new FactoryMethod.MenuFactory();
+        MenuFactory menuFactory = new MenuFactory();
         while (true) {
             try {
-                FactoryMethod.Menu menu = menuFactory.getMenu();
+                Menu menu = menuFactory.getMenu();
                 menu.menuHandler();
             }catch (NullPointerException ex){
                 System.out.println("Roles Are Admin And User");
