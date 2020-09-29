@@ -17,8 +17,13 @@ public class MainApp {
     private static void check() {
         FactoryMethod.MenuFactory menuFactory = new FactoryMethod.MenuFactory();
         while (true) {
-            FactoryMethod.Menu menu = menuFactory.getMenu();
-            menu.menuHandler();
+            try {
+                FactoryMethod.Menu menu = menuFactory.getMenu();
+                menu.menuHandler();
+            }catch (NullPointerException ex){
+                System.out.println("Roles Are Admin And User");
+                System.out.println("Invalid Role!");
+            }
         }
     }
 
