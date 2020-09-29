@@ -34,11 +34,11 @@ public class ArticleService {
         article.setCategory(category);
         User user = UserService.getUser();
         article.setUser(user);
-        //role set
         if (category == null || user == null) {
             System.out.println("Invalid Category Or User Usage");
             return;
         }
+        article.setModificationDate(createDate);
         repository.insert(article);
     }
 
@@ -236,5 +236,19 @@ public class ArticleService {
     public static void displayAllFiltered() {
         Predicate<Article> predicate = Article::isPublished;
         repository.displayAllFiltered(predicate);
+    }
+
+    public static void displayYearsFiltered() {
+        int firstYear = Integer.parseInt(sc.getString("Year: "));
+        int secondYear = Integer.parseInt(sc.getString("Year: "));
+        Predicate<Article> predicate = (c) -> {
+            int createData = Integer.parseInt(c.getCreateDate().substring(0,4));
+            if(createData >= firstYear){
+                return createData <= secondYear;
+            }
+            return false;
+        };
+        repository.displayAllFiltered(predicate);
+
     }
 }

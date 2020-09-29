@@ -23,7 +23,8 @@ public class UserMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Me
         System.out.println("See All of Articles Press 5");
         System.out.println("Delete Your Articles Press 6");
         System.out.println("To Add This Code To Your Website Press 7 ");
-        System.out.println("Log Out Press 8");
+        System.out.println("To See Articles which Created Between the Years You Desire Press 8");
+        System.out.println("Log Out Press 9");
     }
 
     public void setOption(Scan sc) {
@@ -77,6 +78,9 @@ public class UserMenu extends FactoryMethod.MenuImpl implements FactoryMethod.Me
                     websiteMenu.menuHandler();
                     break;
                 case 8:
+                    ArticleService.displayYearsFiltered();
+                    break;
+                case 9:
                     flag = false;
                     break;
                 default:
