@@ -89,4 +89,18 @@ public class WebsiteRepositoryImpl implements WebsiteRepository {
         em.remove(website);
         em.getTransaction().commit();
     }
+
+    @Override
+    public void displayAll() {
+        em.getTransaction().begin();
+        TypedQuery<Website> query = em.createQuery(
+                "SELECT c FROM Website c ",
+                Website.class);
+        for (int i = 0; i < query.getResultList().size(); i++) {
+            Website c = query.getResultList().get(i);
+            System.out.println("ID: " + c.getId() + "\nAddress: " + c.getAddress() + "\nInfo: " +
+                    c.getWebsiteInfo().getInfo());
+        }
+        em.getTransaction().commit();
+    }
 }

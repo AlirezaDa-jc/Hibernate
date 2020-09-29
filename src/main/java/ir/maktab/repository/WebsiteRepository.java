@@ -5,4 +5,5 @@ import ir.maktab.entities.Website;
 
 public interface WebsiteRepository extends BaseRepository<Website,Integer> {
 
+    void displayAll();
 }

@@ -37,9 +37,10 @@ public class WebsiteService {
         try {
             FileWriter fileWriter = new FileWriter(f1.getName(), true);
             BufferedWriter bw = new BufferedWriter(fileWriter);
+            bw.write("\n");
             bw.write(website.getAddress());
             bw.write("  ");
-            bw.write(user.getName()+'\n');
+            bw.write(user.getName());
             bw.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,9 +49,13 @@ public class WebsiteService {
     }
 
     public static void delete() {
-        display();
+        displayAll();
         int id = Integer.parseInt(sc.getString("Enter id You Want to Remove"));
         repository.deleteById(id);
+    }
+
+    private static void displayAll() {
+        repository.displayAll();
     }
 
     public static void display() {
@@ -67,7 +72,6 @@ public class WebsiteService {
         int id = Integer.parseInt(sc.getString("Which One Do you Want to Allow : (ID) : "));
         Website website = repository.findById(id);
         website.setAllow(true);
-        System.out.println(website.getAddress() + website.isAllow());
         repository.update(website);
     }
 
@@ -90,12 +94,15 @@ public class WebsiteService {
                             System.out.println("You Have Permission!");
                             System.out.println("Source Code Is: ");
                             System.out.println("https://github.com/AlirezaDa-jc/Hibernate");
+                            return;
                         }
+                        System.out.println("Error In Username Or Website Address");
                     }
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("Invalid Address");
     }
 }

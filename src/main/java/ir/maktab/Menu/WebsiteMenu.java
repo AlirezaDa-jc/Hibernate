@@ -14,10 +14,13 @@ public class WebsiteMenu extends FactoryMethod.MenuImpl implements FactoryMethod
     @Override
     public void display() {
         System.out.println("To Use This Database and Codes for Your Website Press 1");
-        System.out.println("To Remove This Database And Codes From Your Website Press 2 ");
-        System.out.println("To See Websites Using This Source Press 3");
-        System.out.println("To Give Permission To use database Press 4(You Should Be Admin!)");
-        System.out.println("To Get Data Source Press 5");
+        System.out.println("To See Websites Using This Source Press 2");
+        System.out.println("To Get Data Source Press 3");
+        if(flagRole == 0) {
+            System.out.println("To Remove This Database And Codes From Your Website Press 4(You Should Be Admin!)");
+            System.out.println("To Give Permission To use database Press 5(You Should Be Admin!)");
+        }
+        System.out.println("To Log Out Press 6");
         System.out.println("Via Alireza.D.a");
     }
 
@@ -33,20 +36,24 @@ public class WebsiteMenu extends FactoryMethod.MenuImpl implements FactoryMethod
                     WebsiteService.insert();
                     break;
                 case 2:
-                    WebsiteService.delete();
+                    WebsiteService.display();
                     break;
                 case 3:
-                    WebsiteService.display();
+                    WebsiteService.dataSourcePermission();
                     break;
                 case 4:
                     if(flagRole == 0) {
-                    WebsiteService.update();
+                        WebsiteService.delete();
                     }else{
                         System.out.println("You Are Not An Admin!");
                     }
                     break;
                 case 5:
-                    WebsiteService.dataSourcePermission();
+                    if(flagRole == 0) {
+                    WebsiteService.update();
+                    }else{
+                        System.out.println("You Are Not An Admin!");
+                    }
                     break;
                 case 6:
                     flag = false;
