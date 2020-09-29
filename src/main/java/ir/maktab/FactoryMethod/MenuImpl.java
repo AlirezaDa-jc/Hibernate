@@ -1,4 +1,4 @@
-package ir.maktab.repository.FactoryMethod;
+package ir.maktab.FactoryMethod;
 
 public abstract class MenuImpl {
     protected int option;

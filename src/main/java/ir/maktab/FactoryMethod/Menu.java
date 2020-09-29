@@ -1,4 +1,4 @@
-package ir.maktab.repository.FactoryMethod;
+package ir.maktab.FactoryMethod;
 
 public interface Menu {
     void display();

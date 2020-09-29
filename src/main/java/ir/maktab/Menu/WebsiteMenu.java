@@ -1,8 +1,8 @@
 package ir.maktab.Menu;
 
+import ir.maktab.FactoryMethod.Menu;
+import ir.maktab.FactoryMethod.MenuImpl;
 import ir.maktab.Scan;
-import ir.maktab.repository.FactoryMethod.Menu;
-import ir.maktab.repository.FactoryMethod.MenuImpl;
 import ir.maktab.services.WebsiteService;
 
 public class WebsiteMenu extends MenuImpl implements Menu {

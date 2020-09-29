@@ -1,14 +1,14 @@
 package ir.maktab.Menu;
 
 
+import ir.maktab.FactoryMethod.Menu;
+import ir.maktab.FactoryMethod.MenuImpl;
 import ir.maktab.MainApp;
 import ir.maktab.Scan;
-import ir.maktab.repository.FactoryMethod.Menu;
-import ir.maktab.repository.FactoryMethod.MenuImpl;
 import ir.maktab.services.*;
 
 public class AdminMenu extends MenuImpl implements Menu {
-    private Scan sc = null;
+    private Scan sc;
 
     public AdminMenu() {
         sc = MainApp.getSc();

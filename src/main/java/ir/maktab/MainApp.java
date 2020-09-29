@@ -1,8 +1,8 @@
 package ir.maktab;
 
 
-import ir.maktab.repository.FactoryMethod.Menu;
-import ir.maktab.repository.FactoryMethod.MenuFactory;
+import ir.maktab.FactoryMethod.Menu;
+import ir.maktab.FactoryMethod.MenuFactory;
 
 public class MainApp {
 

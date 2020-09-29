@@ -1,4 +1,4 @@
-package ir.maktab.repository.FactoryMethod;
+package ir.maktab.FactoryMethod;
 
 import ir.maktab.Menu.AdminMenu;
 import ir.maktab.Menu.UserMenu;

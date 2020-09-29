@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="749b92d3-c99b-4f74-9413-61b441fcc2e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/FactoryMethod/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/FactoryMethod/MenuFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/FactoryMethod/MenuImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/FactoryMethod.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/MainApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/Menu/AdminMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/Menu/AdminMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/Menu/UserMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/Menu/UserMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/Menu/WebsiteMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/Menu/WebsiteMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/FactoryMethod/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/FactoryMethod/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/FactoryMethod/MenuFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/FactoryMethod/MenuFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ir/maktab/repository/FactoryMethod/MenuImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ir/maktab/FactoryMethod/MenuImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ir/maktab/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ir/maktab/MainApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ir/maktab/Menu/AdminMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ir/maktab/Menu/AdminMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ir/maktab/Menu/UserMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ir/maktab/Menu/UserMenu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +154,7 @@
       <workItem from="1601292917880" duration="889000" />
       <workItem from="1601316463373" duration="11251000" />
       <workItem from="1601375772056" duration="7339000" />
-      <workItem from="1601386484684" duration="908000" />
+      <workItem from="1601386484684" duration="1542000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Address And SingleTon EntityManagerGenerator And Optimizing RepositoryImpls">
       <created>1601217541633</created>
@@ -216,7 +219,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601382913024</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Final Version . Changing Factory Method">
+      <created>1601387453559</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1601387453559</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Final Version . Changing Factory Method">
+      <created>1601387515333</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1601387515333</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +250,8 @@
     <MESSAGE value="Updated And Debugged Some Bugs. Linked User And Admin To Website!" />
     <MESSAGE value="Added Feature Of Seeing Articles Between Years By Predicate ! ." />
     <MESSAGE value="Handled Null Pointer Exception In First Menu Of Choosing Role . Try Catch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Handled Null Pointer Exception In First Menu Of Choosing Role . Try Catch" />
+    <MESSAGE value="Final Version . Changing Factory Method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Version . Changing Factory Method" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -285,30 +303,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601138573809" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1601387450878">
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1601388083884">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601387450878" />
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1601388083884" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1600543965826">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600543965826" />
-    <state width="1493" height="237" key="GridCell.Tab.0.bottom" timestamp="1601387505401">
+    <state width="1493" height="237" key="GridCell.Tab.0.bottom" timestamp="1601388084011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="237" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601387505401" />
-    <state width="1493" height="237" key="GridCell.Tab.0.center" timestamp="1601387505400">
+    <state width="1493" height="237" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601388084011" />
+    <state width="1493" height="237" key="GridCell.Tab.0.center" timestamp="1601388084011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="237" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601387505400" />
-    <state width="1493" height="237" key="GridCell.Tab.0.left" timestamp="1601387505400">
+    <state width="1493" height="237" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601388084011" />
+    <state width="1493" height="237" key="GridCell.Tab.0.left" timestamp="1601388084011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="237" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601387505400" />
-    <state width="1493" height="237" key="GridCell.Tab.0.right" timestamp="1601387505401">
+    <state width="1493" height="237" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601388084011" />
+    <state width="1493" height="237" key="GridCell.Tab.0.right" timestamp="1601388084011">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="237" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601387505401" />
+    <state width="1493" height="237" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601388084011" />
     <state width="1493" height="390" key="GridCell.Tab.1.bottom" timestamp="1601328256934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -333,10 +351,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601147777941" />
-    <state x="361" y="127" key="Vcs.Push.Dialog.v2" timestamp="1601387455873">
+    <state x="361" y="127" key="Vcs.Push.Dialog.v2" timestamp="1601387516910">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="127" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601387455873" />
+    <state x="361" y="127" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601387516910" />
     <state x="577" y="324" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601380049709">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
