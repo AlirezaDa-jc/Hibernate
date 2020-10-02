@@ -7,6 +7,7 @@ import ir.maktab.entities.WebsiteInfo;
 import ir.maktab.repository.Impl.WebsiteInfoRepositoryImpl;
 import ir.maktab.repository.Impl.WebsiteRepositoryImpl;
 import ir.maktab.repository.WebsiteInfoRepository;
+import ir.maktab.repository.WebsiteRepository;
 
 import java.io.*;
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.function.Predicate;
 
 public class WebsiteService {
     private static Scan sc = Scan.getInstance();
-    private static WebsiteRepositoryImpl repository = new WebsiteRepositoryImpl();
+    private static WebsiteRepository repository = new WebsiteRepositoryImpl();
     private static WebsiteInfoRepository infoRepository = new WebsiteInfoRepositoryImpl();
     private static Website website = new Website();
 

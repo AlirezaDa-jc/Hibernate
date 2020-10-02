@@ -13,6 +13,7 @@ public class Website {
     private String address;
     @Column(name = "allow" , nullable = false)
     private boolean allow;
+    //isAllowed
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private WebsiteInfo websiteInfo;

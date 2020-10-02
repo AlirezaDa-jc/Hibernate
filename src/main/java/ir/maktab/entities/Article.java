@@ -6,7 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "article")
-
+//Embedded Use!
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

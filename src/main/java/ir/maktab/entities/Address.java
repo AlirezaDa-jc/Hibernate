@@ -13,7 +13,7 @@ public class Address {
     @Column(name = "addressCol")
     private String address;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL,
+    @OneToOne(fetch = FetchType.LAZY, cascade={CascadeType.ALL},
             mappedBy = "address")
     private User user;
 
